@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export BUILDDIR=$(pwd)/build
+export BITBAKEDIR=$(pwd)/bitbake
+export BBPATH=$BUILDDIR
+export PATH=$BITBAKEDIR/bin:$PATH
