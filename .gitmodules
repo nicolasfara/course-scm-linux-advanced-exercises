@@ -5,7 +5,7 @@
 [submodule "yocto/02-custom-distro/bitbake"]
 	path = yocto/02-custom-distro/bitbake
 	url = git://git.openembedded.org/bitbake
-	branch = 2.2
+	branch = 2.8
 [submodule "yocto/02-custom-distro/meta-raspberrypi"]
 	path = yocto/02-custom-distro/meta-raspberrypi
 	url = git://git.yoctoproject.org/meta-raspberrypi
