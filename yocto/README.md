@@ -4,9 +4,9 @@
 
 Assicurarsi di avere i seguenti requisti installati:
 
-    - Almeno 90GB di spazio libero su disco
-    - Docker
-    - Git
+- Almeno 90GB di spazio libero su disco
+- Docker
+- Git
 
 Assicurarsi di aver inizializzato tutti i submodules:
 
@@ -80,6 +80,6 @@ Other commonly useful commands are:
 
 > Esercizio 01: Creare un'immagine base di Yocto sulla base dei seguenti requisiti:
 >
-> - Architettura: deve supportare processori ARM
-> - La distro **NON** deve essere quella di default (`poky`)
-> - Deve avere supporto per il package manager `opkg`
+> - La distribuzione deve supportare processori ARM
+> - La distribuzione **NON** deve essere quella di default (`poky`)
+> - La distribuzione deve avere supporto per il package manager `opkg`
