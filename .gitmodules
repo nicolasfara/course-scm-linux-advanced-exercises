@@ -1,16 +1,4 @@
-[submodule "yocto/02-custom-distro/openembedded-core"]
-	path = yocto/02-custom-distro/openembedded-core
-	url = git://git.openembedded.org/openembedded-core
-	branch = scarthgap
-[submodule "yocto/02-custom-distro/bitbake"]
-	path = yocto/02-custom-distro/bitbake
-	url = git://git.openembedded.org/bitbake
-	branch = 2.8
-[submodule "yocto/02-custom-distro/meta-raspberrypi"]
-	path = yocto/02-custom-distro/meta-raspberrypi
-	url = git://git.yoctoproject.org/meta-raspberrypi
-	branch = scarthgap
-[submodule "yocto/02-custom-distro/meta-openembedded"]
-	path = yocto/02-custom-distro/meta-openembedded
-	url = git://git.openembedded.org/meta-openembedded
+[submodule "yocto/poky"]
+	path = yocto/poky
+	url = git://git.yoctoproject.org/poky
 	branch = scarthgap
