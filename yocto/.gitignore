@@ -1,0 +1,6 @@
+# Ignores all the yocto files
+**/cache
+**/downloads
+**/sstate-cache
+**/tmp
+*.log
