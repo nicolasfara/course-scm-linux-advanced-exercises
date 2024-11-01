@@ -91,7 +91,10 @@ Other commonly useful commands are:
 
 ### Soluzione
 
+<<<<<<< HEAD
 <!--
+=======
+>>>>>>> d1fcb4c (Add solution 01)
 <details>
 <summary>Clicca qui per la soluzione</summary>
 
