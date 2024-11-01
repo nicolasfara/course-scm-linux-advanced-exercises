@@ -83,5 +83,6 @@ Other commonly useful commands are:
 > - La distribuzione deve supportare processori ARM
 > - La distribuzione **NON** deve essere quella di default (`poky`)
 > - La distribuzione deve avere supporto per il package manager `opkg`
+> - La distribuzione deve essere minimale
 
 **Tempo stimato**: 15 minuti
