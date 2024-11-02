@@ -91,10 +91,7 @@ Other commonly useful commands are:
 
 ### Soluzione
 
-<<<<<<< HEAD
 <!--
-=======
->>>>>>> d1fcb4c (Add solution 01)
 <details>
 <summary>Clicca qui per la soluzione</summary>
 
@@ -148,7 +145,7 @@ BBLAYERS ?= " \
   ${TOPDIR}/../poky/meta \
   ${TOPDIR}/../poky/meta-poky \
   ${TOPDIR}/../poky/meta-yocto-bsp \
-  ${TOPDIR}/../meta-raspberrypi \
+  ${TOPDIR}/../poky/meta-raspberrypi \
   "
 ```
 
