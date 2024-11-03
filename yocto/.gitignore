@@ -4,3 +4,4 @@
 **/sstate-cache
 **/tmp
 *.log
+build/buildhistory

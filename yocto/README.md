@@ -145,7 +145,7 @@ BBLAYERS ?= " \
   ${TOPDIR}/../poky/meta \
   ${TOPDIR}/../poky/meta-poky \
   ${TOPDIR}/../poky/meta-yocto-bsp \
-  ${TOPDIR}/../poky/meta-raspberrypi \
+  ${TOPDIR}/../meta-raspberrypi \
   "
 ```
 
