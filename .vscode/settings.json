@@ -1,13 +1,9 @@
 {
     "python.autoComplete.extraPaths": [
-        "${workspaceFolder}/yocto/poky/bitbake/lib",
-        "${workspaceFolder}/yocto/poky/meta/lib",
         "${workspaceFolder}/sources/poky/bitbake/lib",
         "${workspaceFolder}/sources/poky/meta/lib"
     ],
     "python.analysis.extraPaths": [
-        "${workspaceFolder}/yocto/poky/bitbake/lib",
-        "${workspaceFolder}/yocto/poky/meta/lib",
         "${workspaceFolder}/sources/poky/bitbake/lib",
         "${workspaceFolder}/sources/poky/meta/lib"
     ],
