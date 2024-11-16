@@ -1,0 +1,10 @@
+[Unit]
+Description=Example Service
+After=network.target
+
+[Service]
+ExecStart=/bin/scmservice
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
