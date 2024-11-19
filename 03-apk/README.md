@@ -19,14 +19,20 @@ docker run --rm -it alpine:latest /bin/sh
 
 > Aggiornare tutti i pacchetti del sistema all'ultima versione disponibile.
 
+**Tempo stimato**: 5 minuti
+
 ## Esercizio 03
 
 > Verificare se nei repository è disponibile il pacchetto vim.  
 > Se il pacchetto è disponibile, installarlo e mostrarne i dettagli.
 
+**Tempo stimato**: 5 minuti
+
 ## Esercizio 04
 
 > Rimuovere il pacchetto vim dal sistema.
+
+**Tempo stimato**: 2 minuti
 
 ## Esercizio 05
 
