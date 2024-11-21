@@ -39,7 +39,6 @@ docker run --rm -it alpine:latest /bin/sh
 > Creare un'immagine Docker basata su Alpine Linux che:
 >
 > - Installa Nginx per servire una pagina web.
-> - Configura htop per il monitoraggio delle risorse del sistema.
-> - Personalizza la configurazione di Nginx per servire una pagina HTML personalizzata.
+> - Configurare il container per supportare la configurazione [`nginx.conf`](./nginx.conf) e servire il file [`index.html`](./index.html).
 
 **Tempo stimato**: 20 minuti
