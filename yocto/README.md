@@ -204,7 +204,6 @@ bitbake core-image-base
 
 **Tempo stimato**: 10 minuti
 
-<!--
 <details>
 <summary>Clicca qui per la soluzione</summary>
 
@@ -228,7 +227,6 @@ bitbake core-image-base
 ```
 
 </details>
--->
 
 ## 05 - Abilitare Systemd come init system
 
@@ -238,7 +236,6 @@ bitbake core-image-base
 
 **Tempo stimato**: 5 minuti
 
-<!--
 <details>
 <summary>Clicca qui per la soluzione</summary>
 
@@ -256,9 +253,8 @@ bitbake core-image-base
 ```
 
 </details>
--->
 
-## 04 - Creare layer per gestire servizio web
+## 06 - Creare layer per gestire servizio web
 
 > Esercizio 04: Creare un layer custom `meta-scmservice` affinché installi il servizio web fornito di seguito.
 >
