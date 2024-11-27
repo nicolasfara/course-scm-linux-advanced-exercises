@@ -326,4 +326,64 @@ WantedBy=multi-user.target
 <details>
 <summary>Clicca qui per la soluzione</summary>
 
+```bash
+$ bitbake-layers create-layer ../meta-scmservice
+```
+
+Aggiungere il layer al progetto:
+
+```bash
+BBLAYERS ?= " \
+  ${TOPDIR}/../poky/meta \
+  ${TOPDIR}/../poky/meta-poky \
+  ${TOPDIR}/../poky/meta-yocto-bsp \
+  ${TOPDIR}/../meta-raspberrypi \
+  ${TOPDIR}/../meta-scmservice \
+  "
+```
+
+Creare la cartella `recipes-webservice` all'interno del layer `meta-scmservice` con all'interno i seguenti file:
+
+- Cartella `files` con all'interno i file `scmservice.py` e `scmservice.service`
+- File `scmservice_1.0.0.bb` con il seguente contenuto:
+
+```bash
+SUMMARY = "My Python Script"
+DESCRIPTION = "A simple Python script example."
+LICENSE = "MIT"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+
+SRC_URI = "file://scmservice.py \
+           file://scmservice.service"
+
+S = "${WORKDIR}"
+
+RDEPENDS:${PN} = "python3-modules"
+
+inherit python3native
+inherit systemd
+
+do_install(){
+    install -d ${D}${bindir}
+    install -d ${D}${systemd_unitdir}/system
+
+    install -m 0755 ${S}/scmservice.py ${D}${bindir}/scmservice
+    install -m 0644 ${S}/scmservice.service ${D}${systemd_unitdir}/system/
+}
+
+SYSTEMD_SERVICE:${PN} = "scmservice.service"
+```
+
+Aggiungere la feature alla configurazione:
+
+```bash
+IMAGE_INSTALL:append = " scmservice"
+```
+
+Compilare l'immagine:
+
+```bash
+bitbake core-image-base
+```
+
 </details>
