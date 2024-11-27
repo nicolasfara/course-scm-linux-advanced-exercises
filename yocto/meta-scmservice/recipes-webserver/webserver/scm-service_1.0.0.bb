@@ -18,7 +18,7 @@ do_install(){
     install -d ${D}${systemd_unitdir}/system
 
     install -m 0755 ${S}/scmservice.py ${D}${bindir}/scmservice
-    install -m 0644 ${WORKDIR}/scmservice.service ${D}${systemd_unitdir}/system/
+    install -m 0644 ${S}/scmservice.service ${D}${systemd_unitdir}/system/
 }
 
 SYSTEMD_SERVICE:${PN} = "scmservice.service"
