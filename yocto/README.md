@@ -91,7 +91,6 @@ Other commonly useful commands are:
 
 ### Soluzione
 
-<!--
 <details>
 <summary>Clicca qui per la soluzione</summary>
 
@@ -110,7 +109,6 @@ bitbake core-image-minimal
 ```
 
 </details>
--->
 
 ## 02 - Aggiungere supporto per Raspberry Pi
 
@@ -121,7 +119,6 @@ bitbake core-image-minimal
 
 **Tempo stimato**: 20 minuti
 
-<!--
 <details>
 <summary>Clicca qui per la soluzione</summary>
 
@@ -169,7 +166,6 @@ bitbake core-image-base
 ```
 
 </details>
--->
 
 ## 03 - Installazione utility per interagire con Raspberry Pi
 
@@ -180,7 +176,6 @@ bitbake core-image-base
 
 **Tempo stimato**: 10 minuti
 
-<!--
 <details>
 <summary>Clicca qui per la soluzione</summary>
 
@@ -197,7 +192,6 @@ bitbake core-image-base
 ```
 
 </details>
--->
 
 ## 04 - Debloat dell'immagine e accesso ssh
 
@@ -329,9 +323,7 @@ WantedBy=multi-user.target
 ```
 </details>
 
-<!--
 <details>
 <summary>Clicca qui per la soluzione</summary>
 
 </details>
---!>
