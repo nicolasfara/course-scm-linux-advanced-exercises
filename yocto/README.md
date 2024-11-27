@@ -199,6 +199,71 @@ bitbake core-image-base
 </details>
 -->
 
+## 04 - Debloat dell'immagine e accesso ssh
+
+> Esercizio 04: Rimuovere i pacchetti non necessari dall'immagine e abilitare l'accesso ssh.
+>
+> Operare sulla variabile `IMAGE_INSTALL` per rimuovere i pacchetti non necessari dall'immagine.
+> Abilitare l'accesso ssh.
+>
+> **Tip**: Il comand `bitbake-getvar <VARIABILE>` può essere utile per ottenere il valore di una variabile BitBake.
+
+**Tempo stimato**: 10 minuti
+
+<!--
+<details>
+<summary>Clicca qui per la soluzione</summary>
+
+Per ottenere la lista dei pacchetti installati nell'immagine, eseguire il comando:
+
+```bash
+$ bitbake-getvar IMAGE_INSTALL
+```
+
+Modificare il file `build/conf/local.conf` per rimuovere i pacchetti non necessari e abilitare l'accesso ssh:
+
+```bash
+EXTRA_IMAGE_FEATURES:append = " ssh-server-openssh"
+DISTRO_FEATURES:remove = " nfc x11 opengl wayland vulkan"
+```
+
+Compilare l'immagine:
+
+```bash
+bitbake core-image-base
+```
+
+</details>
+-->
+
+## 05 - Abilitare Systemd come init system
+
+> Esercizio 05: Abilitare Systemd come init system.
+>
+> **Tip**: consultare la documentazione ufficiale al link: https://docs.yoctoproject.org/5.0.5/dev-manual/init-manager.html
+
+**Tempo stimato**: 5 minuti
+
+<!--
+<details>
+<summary>Clicca qui per la soluzione</summary>
+
+Modificare il file `build/conf/local.conf` per abilitare Systemd come init system:
+
+```bash
+DISTRO_FEATURES:append = " systemd"
+VIRTUAL-RUNTIME_init_manager = "systemd"
+```
+
+Compilare l'immagine:
+
+```bash
+bitbake core-image-base
+```
+
+</details>
+-->
+
 ## 04 - Creare layer per gestire servizio web
 
 > Esercizio 04: Creare un layer custom `meta-scmservice` affinché installi il servizio web fornito di seguito.
