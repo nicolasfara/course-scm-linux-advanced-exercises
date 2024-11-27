@@ -12,6 +12,8 @@ Assicurarsi di aver inizializzato tutti i submodules:
 
 ```bash
 git submodule update --init --recursive
+cd poky
+git checkout scarthgap-5.0.5
 ```
 
 Per configurare l'ambiente di lavoro:
