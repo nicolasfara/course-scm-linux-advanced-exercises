@@ -88,3 +88,113 @@ Other commonly useful commands are:
 > - La distribuzione deve essere minimale
 
 **Tempo stimato**: 15 minuti
+
+### Soluzione
+
+<!--
+<details>
+<summary>Clicca qui per la soluzione</summary>
+
+Nel file `build/conf/local.conf` aggiungere le seguenti righe:
+
+```bash
+MACHINE ?= "genericarm64" # Supporto per processori ARM
+DISTRO ?= "poky-tiny" # Distribuzione alternativa a quella di default, più leggera
+PACKAGE_CLASSES ?= "package_ipk" # Supporto per il package manager opkg
+```
+
+Compilare l'immagine:
+
+```bash
+bitbake core-image-minimal
+```
+
+</details>
+-->
+
+## 02 - Aggiungere supporto per Raspberry Pi
+
+> Esercizio 02: Aggiungere il supporto per Raspberry Pi al progetto Yocto.
+>
+> Aggiungere supporto per Raspberry Pi 4 (versione a 64bit) al progetto Yocto.  
+> **Suggerimento**: cercare il layer `meta-raspberrypi` su [OpenEmbedded Layer Index](https://layers.openembedded.org/layerindex/branch/master/layers/)
+
+**Tempo stimato**: 20 minuti
+
+<!--
+<details>
+<summary>Clicca qui per la soluzione</summary>
+
+Aggiungere il layer `meta-raspberrypi` come submodule all'interno della cartella `yocto`:
+
+```bash
+cd poky
+submodule add -b scarthgap git://git.yoctoproject.org/meta-raspberrypi
+```
+
+Aggiungere il layer al progetto:
+
+```bash
+bitbake-layers add-layer ../meta-raspberrypi
+```
+
+Oppure editare il file `build/conf/bblayers.conf` e aggiungere il layer manualmente:
+
+```bash
+BBLAYERS ?= " \
+  ${TOPDIR}/../poky/meta \
+  ${TOPDIR}/../poky/meta-poky \
+  ${TOPDIR}/../poky/meta-yocto-bsp \
+  ${TOPDIR}/../meta-raspberrypi \
+  "
+```
+
+A questo punto se si compilasse l'immagine per Raspberry Pi 4, si otterrebbe un errore di compilazione:
+
+```
+ERROR: Nothing RPROVIDES 'linux-firmware-rpidistro-bcm43456' (but /workdir/build/../poky/meta/recipes-core/packagegroups/packagegroup-base.bb RDEPENDS on or otherwise requires it)
+linux-firmware-rpidistro RPROVIDES linux-firmware-rpidistro-bcm43456 but was skipped: Has a restricted license 'synaptics-killswitch' which is not listed in your LICENSE_FLAGS_ACCEPTED.
+```
+
+Per risolvere questo problema, è necessario modificare il file `build/conf/local.conf` e aggiungere la seguente riga:
+
+```bash
+LICENSE_FLAGS_WHITELIST = "synaptics-killswitch"
+```
+
+A questo punto è possibile compilare l'immagine per Raspberry Pi 4:
+
+```bash
+bitbake core-image-base
+```
+
+</details>
+-->
+
+## 03 - Installazione utility per interagire con Raspberry Pi
+
+> Esercizio 03: Installare le utility necessarie per interagire con Raspberry Pi.
+>
+> Installare nell'immagine l'utility `rpi-gpio` e `raspi-gpio` per interagire con i GPIO di Raspberry Pi.
+> **Suggerimento**: cercare i pacchetti all'interno del layer `meta-raspberrypi` installato precedentemente.
+
+**Tempo stimato**: 10 minuti
+
+<!--
+<details>
+<summary>Clicca qui per la soluzione</summary>
+
+Aggiungere i pacchetti `rpi-gpio` e `raspi-gpio` al file `build/conf/local.conf`:
+
+```bash
+IMAGE_INSTALL:append = " rpi-gpio raspi-gpio"
+```
+
+Compilare l'immagine:
+
+```bash
+bitbake core-image-base
+```
+
+</details>
+-->
