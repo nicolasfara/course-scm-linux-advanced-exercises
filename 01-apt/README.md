@@ -25,14 +25,14 @@ docker run --rm -it -v ubuntu:22.04 /bin/bash
 > Verificare se il sistema necessita di aggiornamenti.  
 > Nel caso alcuni aggiornamenti siano disponibili, stampare a video la lista degli aggiornamenti.
 
-<!-- <details>
+<details>
 <summary>Soluzione</summary>
 
 ```bash
 sudo apt update
 sudo apt list --upgradable
 ```
-</details> -->
+</details>
 
 **Tempo stimato**: 5 minuti
 
@@ -40,13 +40,13 @@ sudo apt list --upgradable
 
 > Se al passo precedente sono stati trovati aggiornamenti, installarli.
 
-<!-- <details>
+<details>
 <summary>Soluzione</summary>
 
 ```bash
 sudo apt upgrade
 ```
-</details> -->
+</details>
 
 **Tempo stimato**: 5 minuti
 
@@ -55,14 +55,14 @@ sudo apt upgrade
 > Verificare se nei repository di default esiste il pacchetto `vim`. Se il pacchetto è presente, mostrarne le informazioni dettagliate.  
 > Installare il pacchetto `vim`.
 
-<!-- <details>
+<details>
 <summary>Soluzione</summary>
 
 ```bash
 apt search vim
 apt show vim
 ```
-</details> -->
+</details>
 
 **Tempo stimato**: 5 minuti
 
@@ -70,13 +70,14 @@ apt show vim
 
 > Rimuovere il pacchetto `vim` dal sistema.
 
-<!-- <details>
+<details>
 <summary>Soluzione</summary>
 
 ```bash
 apt remove vim
 ```
-</details> -->
+</details>
+
 
 **Tempo stimato**: 2 minuti
 
@@ -85,7 +86,7 @@ apt remove vim
 > Installare `mongodb` sul sistema.  
 > **Consiglio**: utilizzare la documentazione ufficiale di MongoDB per installare il pacchetto.
 
-<!-- <details>
+<details>
 <summary>Soluzione</summary>
 
 ```bash
@@ -97,4 +98,5 @@ echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gp
 sudo apt update
 sudo apt install -y mongodb-org
 ```
-</details> -->
+</details>
+

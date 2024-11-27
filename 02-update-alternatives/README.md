@@ -6,14 +6,14 @@
 
 **Tempo stimato**: 2 minuti
 
-<!-- <details>
+<details>
 <summary>Soluzione</summary>
 
 ```bash
 update-alternatives --display editor
 ```
 
-</details> -->
+</details>
 
 ## Esercizio 02
 
@@ -21,14 +21,14 @@ update-alternatives --display editor
 
 **Tempo stimato**: 2 minuti
 
-<!-- <details>
+<details>
 <summary>Soluzione</summary>
 
 ```bash
 update-alternatives --set editor /usr/bin/vim.basic
 ```
 
-</details> -->
+</details>
 
 ## Esercizio 03
 
@@ -38,7 +38,7 @@ update-alternatives --set editor /usr/bin/vim.basic
 
 **Tempo stimato**: 5 minuti
 
-<!-- <details>
+<details>
 <summary>Soluzione</summary>
 
 ```bash
@@ -47,4 +47,4 @@ sudo update-alternatives --config java
 java -version
 ```
 
-</details> -->
+</details>

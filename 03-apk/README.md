@@ -20,7 +20,6 @@ docker run --rm -it alpine:latest /bin/sh
 
 **Tempo stimato**: 2 minuti
 
-<!--
 <details>
 <summary>Soluzione</summary>
 ```bash
@@ -28,7 +27,6 @@ apk update
 apk list -u
 ```
 </details>
--->
 
 ## Esercizio 02
 
@@ -36,7 +34,6 @@ apk list -u
 
 **Tempo stimato**: 5 minuti
 
-<!--
 <details>
 <summary>Soluzione</summary>
 ```bash
@@ -47,7 +44,6 @@ Esiste un flag per "simulare" l'aggiornamento senza effettuarlo:
 `apk upgrade -s` o `apk upgrade --simulate`.
 
 </details>
--->
 
 ## Esercizio 03
 
@@ -57,7 +53,6 @@ Esiste un flag per "simulare" l'aggiornamento senza effettuarlo:
 
 **Tempo stimato**: 5 minuti
 
-<!--
 <details>
 <summary>Soluzione</summary>
 ```bash
@@ -66,7 +61,6 @@ apk info -a vim
 apk add vim
 ```
 </details>
--->
 
 ## Esercizio 04
 
@@ -74,14 +68,12 @@ apk add vim
 
 **Tempo stimato**: 2 minuti
 
-<!--
 <details>
 <summary>Soluzione</summary>
 ```bash
 apk del vim
 ```
 </details>
--->
 
 ## Esercizio 05
 
@@ -92,7 +84,6 @@ apk del vim
 
 **Tempo stimato**: 20 minuti
 
-<!--
 <details>
 <summary>Soluzione</summary>
 ```Dockerfile
@@ -120,4 +111,3 @@ Eseguire il container:
 docker run --rm -d -p 8080:80 scm-nginx-alpine
 ```
 </details>
--->
