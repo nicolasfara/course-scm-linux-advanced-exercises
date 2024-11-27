@@ -8,9 +8,6 @@ SRC_URI = "file://scmservice.py \
 
 S = "${WORKDIR}"
 
-RDEPENDS:${PN} = "python3-modules"
-
-inherit python3native
 inherit systemd
 
 do_install(){
