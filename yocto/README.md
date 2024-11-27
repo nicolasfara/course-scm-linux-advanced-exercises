@@ -198,3 +198,75 @@ bitbake core-image-base
 
 </details>
 -->
+
+## 04 - Creare layer per gestire servizio web
+
+> Esercizio 04: Creare un layer custom `meta-scmservice` affinché installi il servizio web fornito di seguito.
+>
+> Predisporre un layer custom con nome `meta-scmservice` e apportare le necessarie modifiche al file `bblayers.conf` affinché il layer sia riconosciuto da BitBake.  
+> Il layer deve contenere **una** ricetta (`recipes-scmservice`) per l'installazione nel sistema dello script `scmservice.py`.  
+> Infine, predisporre un **service** di _systemd_ per avviare il servizio al boot.
+>
+> **Tip**: potrebbe essere utile leggere la documentazione in testa al file `systemd.bbclass` presente in `poky/meta/classes-recipe` per configurare il servizio all'avvio.
+
+Il seguente file (`scmservice.py`) deve far parte dei file della ricetta richiesta dall'esercizio.
+
+```python
+#!/usr/bin/env python3
+
+from http.server import BaseHTTPRequestHandler, HTTPServer
+import platform
+
+hostName = "0.0.0.0"
+serverPort = 8080
+
+class MyServer(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/html")
+        self.end_headers()
+        self.wfile.write(bytes("<html><head><title>https://pythonbasics.org</title></head>", "utf-8"))
+        self.wfile.write(bytes("<p>Request: %s</p>" % self.path, "utf-8"))
+        self.wfile.write(bytes("<body>", "utf-8"))
+        self.wfile.write(bytes("<h1>SCM & Yocto Linux</h1>", "utf-8"))
+        self.wfile.write(bytes(f"<p>This is an example web server running on {platform.uname()[1]}.</p>", "utf-8"))
+        self.wfile.write(bytes("</body></html>", "utf-8"))
+
+if __name__ == "__main__":        
+    webServer = HTTPServer((hostName, serverPort), MyServer)
+    print("Server started http://%s:%s" % (hostName, serverPort))
+
+    try:
+        webServer.serve_forever()
+    except KeyboardInterrupt:
+        pass
+
+    webServer.server_close()
+    print("Server stopped.")
+```
+
+<details>
+<summary>Servizio Systemd per avvio al boot</summary>
+
+Anche questo file (`scmservice.service`) deve far parte dei file della ricetta.
+
+```systemd
+[Unit]
+Description=SCM Example Service
+After=network.target
+
+[Service]
+ExecStart=/bin/scmservice
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+</details>
+
+<!--
+<details>
+<summary>Clicca qui per la soluzione</summary>
+
+</details>
+--!>
