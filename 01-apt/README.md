@@ -17,7 +17,7 @@
 3. Eseguire il seguente comando per avviare un container con Ubuntu 22.04:
 
 ```bash
-docker run --rm -it -v ubuntu:22.04 /bin/bash
+docker run --rm -it ubuntu:22.04 /bin/bash
 ```
 
 ## Esercizio 01
