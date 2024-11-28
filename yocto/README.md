@@ -156,7 +156,7 @@ linux-firmware-rpidistro RPROVIDES linux-firmware-rpidistro-bcm43456 but was ski
 Per risolvere questo problema, è necessario modificare il file `build/conf/local.conf` e aggiungere la seguente riga:
 
 ```bash
-LICENSE_FLAGS_WHITELIST = "synaptics-killswitch"
+LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
 ```
 
 A questo punto è possibile compilare l'immagine per Raspberry Pi 4:
