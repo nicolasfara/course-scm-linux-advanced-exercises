@@ -86,7 +86,7 @@ apk del vim
 
 <details>
 <summary>Soluzione</summary>
-```Dockerfile
+```
 FROM alpine:latest
 
 RUN apk add --no-cache nginx
